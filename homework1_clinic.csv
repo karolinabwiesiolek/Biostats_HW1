@@ -1,0 +1,13 @@
+id,program,severity,age_years,prior_visits,wait_min,improved
+01,Yes,Mild,23,0,2,1
+02,Yes,Moderate,31,1,4,1
+03,Yes,Severe,45,3,4,0
+04,Yes,Moderate,29,2,6,1
+05,Yes,Severe,60,4,8,0
+06,Yes,Severe,52,2,NA,1
+07,No,Mild,25,0,10,0
+08,No,Mild,37,1,10,1
+09,No,Moderate,43,2,12,0
+10,No,Moderate,66,5,25,0
+11,No,Severe,48,2,NA,1
+12,No,Severe,57,3,NA,0
