@@ -1,13 +1,7 @@
----
-title: "HW_1"
-output:
-  pdf_document: default
-  html_document: default
-date: "2026-09-27"
----
 
+  
 #Question 8a
-```{r}
+
 d <- read.csv("homework1_clinic.csv", #reading in the data
               colClasses=c(id="character"))
 
@@ -38,48 +32,45 @@ missing_wait <- tapply(is.na(d$wait_min),
 
 print(missing_wait)
 
-```
 
 #Question 8b
-```{r}
+
 difference <- rate["Yes"] - rate["No"]
 
 print(difference)
 print(100 * difference)
-```
+
 
 #Question 8c
-```{r}
+
 barplot(rate,
         ylim=c(0,1),
         xlab="Program",
         ylab="Improvement proportion",
         main="")
-```
+
 
 #Question 8d
-
 ## Among the participants the observed improvement proportion was 66.67% in the yes program group and 33.33% on the No program group. The difference between the two is 33.33 percentage points. This difference does not have to be automatically a causal effect because participants were not randomly assigned to the programs. For example, if the baseline severity could affect both program choice and improvement the participants with more severe baseline conditions could be more likely to choose the program and might also have a different probability of improving.
-
 
 
 #question 10
 
 #10A
 
-```{r}
+
 B <- 100000
 theory_without <- (3/8) * (2/7) * (1/6)
 theory_with <- (3/8)^3
 
 print(theory_without)
 print(theory_with)
-```
+
 
 
 #10B
 
-```{r}
+
 B <- 100000
 set.seed(813110)
 
@@ -94,10 +85,10 @@ empirical_without <- mean(all3)
 print(successes_without)
 print(empirical_without)
 print(theory_without)
-```
+
 
 #10C
-```{r}
+
 set.seed(813111)
 
 draws2 <- replicate(B,
@@ -111,10 +102,10 @@ empirical_with <- mean(all3_2)
 print(successes_with)
 print(empirical_with)
 print(theory_with)
-```
 
 
-```{r}
+
+
 running <- cumsum(all3) / seq_len(B)
 
 print(running[100])
@@ -130,7 +121,7 @@ plot(1:B, running,
 
 abline(h = theory_without,
        lty= 2)
-```
+
 
 
 #10d
@@ -140,8 +131,6 @@ abline(h = theory_without,
 
 
 
-
-```{r}
 pdf("R_plots.pdf")
 
 barplot(rate,
@@ -160,5 +149,4 @@ abline(h=theory_without,
        lty=2)
 
 dev.off()
-```
 
